@@ -5,6 +5,7 @@
         <li><a href="?leht=joonis.php">JS Joonis</a></li>
         <li><a href="?leht=matemaatika.php">Matemaatika tehed</a></li>
         <li><a href="?leht=pildifailidegatoo.php">Pildid</a></li>
+        <li><a href="?leht=tekstifunktsioonid.php">Tekstifunktsioonid</a></li>
         <li><a href="?">...</a></li>
     </ul>
 </nav>
