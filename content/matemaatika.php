@@ -1,6 +1,7 @@
 <?php
 // eemalda urlist muutujad
 function clearVarsExcept($url, $varname) {
+    // strtok(basename($_SERVER['REQUEST_URI']),"?")
     return "?$varname=".$_REQUEST[$varname];
 }
 echo "<h1>Matemaatika tehed</h1>";
