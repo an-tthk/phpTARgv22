@@ -11,7 +11,7 @@ if (isset($_REQUEST["update"])) {
     header("Location: $_SERVER[PHP_SELF]");
 }
 
-if (isset($_REQUEST['uuskomment'])) {
+if (isset($_REQUEST["uuskomment"])) {
     if (!empty($_REQUEST["komment"])) {
         $komment = $_REQUEST["komment"] . "\n";
         $kask = $yhendus->prepare("UPDATE eestilaul set kommentaarid=CONCAT(IFNULL(kommentaarid,''), ?) WHERE id=?;");
