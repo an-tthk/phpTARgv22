@@ -11,6 +11,18 @@ if (isset($_REQUEST["update"])) {
     header("Location: $_SERVER[PHP_SELF]");
 }
 
+if (isset($_REQUEST['uuskomment'])) {
+    if (!empty($_REQUEST["komment"])) {
+        $komment = "\n" . $_REQUEST["komment"];
+        $kask = $yhendus->prepare("UPDATE eestilaul set kommentaarid=CONCAT(kommentaarid, ?) WHERE id=?;");
+
+        $kask->bind_param("si", ...[$komment, $_REQUEST["uuskomment"]]);
+        $kask->execute();
+    }
+
+    header("Location: $_SERVER[PHP_SELF]");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +53,7 @@ if (isset($_REQUEST["update"])) {
         echo "<td>".$laulja."</td>";
         echo "<td>".$punktid."</td>";
         echo "<td><a href='?update=$id'>Lisa 1 punkt</a></td>";
-        echo "<td>".$kommentaarid."</td>";
+        echo "<td>".nl2br(htmlspecialchars($kommentaarid))."</td>";
 
         echo "
             <td>
