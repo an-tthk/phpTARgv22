@@ -13,8 +13,8 @@ if (isset($_REQUEST["update"])) {
 
 if (isset($_REQUEST['uuskomment'])) {
     if (!empty($_REQUEST["komment"])) {
-        $komment = "\n" . $_REQUEST["komment"];
-        $kask = $yhendus->prepare("UPDATE eestilaul set kommentaarid=CONCAT(kommentaarid, ?) WHERE id=?;");
+        $komment = $_REQUEST["komment"] . "\n";
+        $kask = $yhendus->prepare("UPDATE eestilaul set kommentaarid=CONCAT(IFNULL(kommentaarid,''), ?) WHERE id=?;");
 
         $kask->bind_param("si", ...[$komment, $_REQUEST["uuskomment"]]);
         $kask->execute();
