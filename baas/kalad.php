@@ -52,10 +52,10 @@ if (isset($_REQUEST["delete"])) {
         $kask->execute();
 
         if ($kask->fetch()) {
-            echo "<div style='background-color: ".$varv."; width: 200p;'>";
+            echo "<div style='background-color: ".$varv."; padding: 3px; width: auto; margin: 0;'>";
             echo "<strong>".$id.", ".$kalanimi.", ".$varv."</strong>";
             echo "<br/>";
-            echo "<img src='".$pilt."'>";
+            echo "<img src='".$pilt."' width='500px'>";
             echo "<br/>";
             echo "<a href='?delete=".$id."'>Delete</a>";
             echo "</div>";
