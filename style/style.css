@@ -1,7 +1,7 @@
 ul {
     list-style-type: none;
     margin: 0;
-    padding: 0px;
+    padding: 0;
     overflow: hidden;
     background-color: lightgray;
 }
@@ -19,7 +19,7 @@ li a {
     text-decoration: none;
 }
 .active{
-    background-color: gray;
+    background-color: rgb(128, 128, 128);
     color: white;
 }
 li a:hover {
