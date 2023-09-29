@@ -18,3 +18,14 @@ CREATE TABLE kalad(
 INSERT INTO kalad (kalanimi)
 VALUES ('Seva');
 SELECT * FROM kalad;
+
+CREATE table eestilaul(
+                          id int not null AUTO_INCREMENT PRIMARY key,
+                          laulunimi varchar(255) not null,
+                          laulja varchar(255),
+                          punktid int,
+                          kommentaarid text,
+                          avalik int DEFAULT 1);
+INSERT INTO eestilaul (laulunimi, laulja, punktid)
+VALUES ('Cha-cha-cha', 'Sevastijan Saaber', 0);
+SELECT * FROM eestilaul;
